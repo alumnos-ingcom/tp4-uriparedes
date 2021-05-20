@@ -4,8 +4,6 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-#Esto no anda
-
 def ingreso_entero(mensaje):
     """Esta funcion muestra un mensaje y agrega la # para indicar el ingreso de un numero entero"""
     ingreso = input(mensaje + " #")
