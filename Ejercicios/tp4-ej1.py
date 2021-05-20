@@ -24,7 +24,7 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
         except IngresoIncorrecto as err:
             print(f"No era un numero correcto, quedan {intentos} cantidad de intentos")
             cantidad_reintentos = cantidad_reintentos-1
-        raise IngresoIncorrecto("Luego de  {intentos}") from err
+        raise IngresoIncorrecto("Luego e  {intentos}") from err
     
 #def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
 
