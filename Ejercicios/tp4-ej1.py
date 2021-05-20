@@ -17,24 +17,33 @@ def ingreso_entero(mensaje):
 
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
-    intentos = cantidad_reintentos
-    while (cantidad_reintentos > 0):
+    if (cantidad_reintentos > 0):
         try:
             return ingreso_entero(mensaje)
         except IngresoIncorrecto as err:
-            print(f"No era un numero correcto, quedan {intentos} cantidad de intentos")
             cantidad_reintentos = cantidad_reintentos-1
+            print(f"No era un numero correcto, quedan {cantidad_reintentos} cantidad de intentos")
+            ingreso_entero_reintento(mensaje, cantidad_reintentos)
+    else:
         raise IngresoIncorrecto("Luego e  {intentos}") from err
     
-#def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
+def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
+    msg = f"{mensaje}entre {valor_minimo} y {valor_maximo} "
+    numero = ingreso_entero(msg)
+    if(numero>=valor_minimo and numero<=valor_maximo):
+        return numero
+    else:
+        raise IngresoIncorrecto(msg)
 
 class IngresoIncorrecto(Exception):
     """Esta es la Excepcion para el ingreso incorrecto"""
     pass
 
 def prueba():
-    num = ingreso_entero_reintento("Ingrese un numero ", cantidad_reintentos = 5)
-    print(f"El numero es: {num}")
+    msg = "Ingrese un numero "
+    num = ingreso_entero(msg)
+    num = ingreso_entero_reintento(msg, cantidad_reintentos = 5)
+    num = ingreso_entero_restringido(msg, 0, 5)
     pass
 
 if __name__ == "__main__":
