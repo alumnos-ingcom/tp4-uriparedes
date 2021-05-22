@@ -27,8 +27,10 @@ class IngresoIncorrecto(Exception):
 def prueba():
     #temperatura = ingreso_real("Ingrese una temperatura en grados centigrados: ")
     msg = "Ingrese una temperatura en grados "
-    print(f"La temperatura en fahrenheit es : {convertir_a_fahrenheit(ingreso_real(msg + 'centigrados: '))}")
-    print(f"La temperatura en centigrados es : {convertir_a_centigrados(ingreso_real(msg + 'fahrenheit: '))}")
+    fahrenheit = convertir_a_fahrenheit(ingreso_real(msg + 'centigrados: '))
+    print(f"La temperatura en fahrenheit es : {fahrenheit}")
+    centigrados = convertir_a_centigrados(ingreso_real(msg + 'fahrenheit: '))
+    print(f"La temperatura en centigrados es : {centigrados}")
     
 if __name__ == "__main__":
     prueba()
