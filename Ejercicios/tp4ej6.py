@@ -20,8 +20,8 @@ def maximo(lista):
 
 def prueba():
     array = [3, 1, 2, 0, 4, 5]
-    print(minimo(array))
-    print(maximo(array))
+    print(f"el valor minimo es: {minimo(array)}")
+    print(f"el valor maximo es: {maximo(array)}")
     
 if __name__ == "__main__":
     prueba()

@@ -6,13 +6,18 @@
 import tp4ej1 as soporte
 
 def suma_lenta(numero1, numero2):
-    pass
-    
+    suma = numero1
+    while (suma != (numero1+numero2)):
+        if(numero2 > 0):
+            suma = suma+1
+        else:
+            suma = suma-1
+    return suma
 
 def prueba():
     msg = "Ingrese un numero entero "
     num = suma_lenta(soporte.ingreso_entero(msg), soporte.ingreso_entero(msg))
-    pass
+    print(f"la suma de los numeros es {num}")
 
 if __name__ == "__main__":
     prueba()
