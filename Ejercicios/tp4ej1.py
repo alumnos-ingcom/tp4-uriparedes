@@ -11,7 +11,7 @@ def ingreso_entero(mensaje):
         entero = int(ingreso)
     except ValueError as err:
         raise IngresoIncorrecto("No era un numero entero!") from err
-    return ingreso
+    return entero
 
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
