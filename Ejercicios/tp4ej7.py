@@ -15,7 +15,6 @@ def division_lenta(dividendo, divisor):
 def prueba():
     msg = "Ingrese un numero entero: "
     print(f"(cociente, resto) = {division_lenta(soporte.ingreso_entero(msg), soporte.ingreso_entero(msg))}")
-    
 
 if __name__ == "__main__":
     prueba()
